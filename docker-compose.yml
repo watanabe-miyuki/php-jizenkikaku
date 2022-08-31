@@ -1,10 +1,5 @@
 version: '3'
 
-#↓下記追記↓
-# volumes:
-#   db-volume:
-#   maildir: {}
-
 services:
   web:
     image: nginx:latest
@@ -39,19 +34,19 @@ services:
       - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
 
 
-  # phpmyadmin:
-  #   image: phpmyadmin/phpmyadmin
-  #   depends_on:
-  #     - db
-  #   environment:
-  #     - PMA_ARBITRARY=1
-  #     - PMA_HOSTS=db
-  #     - PMA_USER=posse_user
-  #     - PMA_PASSWORD=password
-  #   ports:
-  #     - "4040:80"
-  #   volumes:
-  #     - ./docker/phpmyadmin/sessions:/sessions
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOSTS=db
+      - PMA_USER=posse_user
+      - PMA_PASSWORD=password
+    ports:
+      - "4040:80"
+    volumes:
+      - ./docker/phpmyadmin/sessions:/sessions
 
   mailhog:
     image: mailhog/mailhog
