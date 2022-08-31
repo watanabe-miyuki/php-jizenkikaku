@@ -1,0 +1,80 @@
+.agent_login_info {
+    width: 600px;
+    margin: 110px auto 75px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    border: 2px solid #4FA49A;
+    border-radius: 5px;
+}
+
+.agent_login_title {
+    margin: 5px auto 20px;
+    color: #4FA49A;
+    font-size: 30px;
+}
+
+.pass_wrong {
+    font-size: 0.8rem;
+    color: red;
+}
+
+.agent_login_info form {
+    color: #4FA49A;
+    width: 250px;
+    margin: 0 auto;
+
+}
+
+.agent_login_title form p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.agent_login_label {
+    margin: 30px 0 5px;
+}
+
+
+
+input[type="text"],
+input[type="password"] {
+    color: #4FA49A;
+    background-color: #fff;
+    width: 250px;
+    height: 50px;
+    border: 2px solid #4FA49A;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+input[type="password"] {
+        letter-spacing: 0.2rem;
+
+}
+
+input[type="text"]::placeholder {
+    color: #cdd;
+}
+input[type="password"]::placeholder {
+    color: #cdd;
+}
+
+input[type="submit"] {
+    color: white;
+    background-color: #4Fa49A;
+    width: 250px;
+    height: 50px;
+    border: 1px solid #4FA49A;
+    border-radius: 3px;
+    margin: 40px auto 10px;
+}
+
+input[type="submit"] value :hover {
+    border-bottom: 2px solid #4FA49A;
+
+}
+

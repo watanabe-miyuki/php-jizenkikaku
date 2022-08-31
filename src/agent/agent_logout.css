@@ -1,0 +1,13 @@
+.message {
+    font-size: 25px;
+    margin: 100px 20px;
+}
+
+.message p {
+    margin-bottom: 20px;
+}
+
+.message a {
+    border-bottom: 2px solid blueviolet;
+}
+

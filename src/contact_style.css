@@ -1,0 +1,453 @@
+html{
+    font-size: 6.25%;
+    font-family: sans-serif;
+
+}
+
+/* ヘッダー */
+header{
+    background-color: #4fa49a;
+    height: 80rem;
+    width: 100%;
+    font-size: 18rem;
+    text-align: center;
+    padding-bottom: 20rem;
+}
+
+header img {
+    width: 200rem;
+    height: 60rem;
+    object-fit: cover;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    padding-top: 10rem;
+}
+
+header nav ul li a {
+    color: white;
+    padding-right: 15rem;
+    font-weight: bold;
+    text-decoration: none;
+    pointer-events: none;
+}
+
+@media only screen and (max-width: 768px) {
+header a{
+    font-size: 16px;
+}
+}
+
+@media only screen and (max-width: 520px) {
+header a {
+  font-size: 3vw;
+}
+}
+
+
+.box_con {
+  max-width: 900px;
+  margin: 60rem auto;
+  font-size: 18rem;
+}
+
+.box_con form {
+  border: 1px solid black;
+  padding: 20rem;
+  border-radius: 10px;
+
+}
+
+.inquiry_form_title {
+  font-size: 30rem;
+  font-weight: bold;
+  margin: 80rem 0 40rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .box_con {
+    margin: 60rem 10px; 
+    font-size: 2vw;
+ }
+}
+
+@media only screen and (max-width: 768px) {
+  .box_con {
+    width: 93%;
+    font-size: 16px;
+    margin: 60rem 0;
+  }
+
+  .box_con h1 {
+    font-size: 4.5vw;
+    margin-left: 3vw;
+  }
+}
+
+.box_con form {
+  width: 100%;
+}
+.box_con form table {
+  width: 100%;
+}
+.box_con form table tr {
+  position: relative;
+}
+.box_con form table tr:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  border-bottom: dotted #cdcdcd 1px;
+}
+.box_con form table tr th {
+  width: 30%;
+  font-weight: normal;
+  padding: 1em .5em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 768px) {
+  .box_con form table tr th {
+    text-align: center;
+    width: 100%;
+    display: block;
+    background: #4FA49A;
+    padding: .8em .2em;
+    color: #fff;
+  }
+}
+.box_con form table tr th span {
+  background: #cd6f55;
+  padding: 0 .3em;
+  color: #fff;
+  margin-left: .5em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.box_con form table tr td {
+  padding: 1em .5em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 768px) {
+  .box_con form table tr td {
+    padding: 1.5em .5em;
+    display: block;
+    width: 100%;
+  }
+}
+.box_con form table tr .box_br {
+  display: block;
+}
+.box_con form table tr select {
+  border: 1px solid #97ae88;
+}
+.box_con form table tr label input {
+  cursor: pointer;
+  display: none;
+  vertical-align: middle;
+}
+.box_con form table tr .radio02-input + label {
+  padding-left: 23px;
+  margin-right: 20px;
+  position: relative;
+}
+.box_con form table tr .radio02-input + label:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #999;
+  border-radius: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.box_con form table tr .radio02-input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  background: #4FA49A;
+  border-radius: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.box_con form table tr select, .box_con form table tr input, .box_con form table tr textarea {
+  width: 100%;
+  height: 3em;
+  padding: .5em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.box_con form table tr textarea {
+  height: 10em;
+}
+
+/*プライバシーのデザインcss↓*/
+.con_pri {
+  max-width: 700px;
+  margin: 0  auto;
+}
+@media only screen and (max-width: 768px) {
+  .con_pri {
+    width: 95%;
+  }
+}
+.con_pri .box_pri {
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #cdcdcd;
+  background: #f7f7f7;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 20px;
+  padding: 20px 55px;
+}
+@media only screen and (max-width: 768px) {
+  .con_pri .box_pri {
+    margin-top: 4%;
+    padding: 3%;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .con_pri .box_pri {
+    padding: 4%;
+  }
+}
+.con_pri .box_pri .box_tori {
+  text-align: left;
+  margin-top: 40px;
+}
+@media only screen and (max-width: 768px) {
+  .con_pri .box_pri .box_tori {
+    margin-top: 4%;
+  }
+}
+.con_pri .box_pri .box_tori h4 {
+  font-weight: normal;
+  margin-bottom: 30px;
+  font-size: 150%;
+}
+@media only screen and (max-width: 768px) {
+  .con_pri .box_pri .box_tori h4 {
+    margin-bottom: 4%;
+  }
+}
+.con_pri .box_pri .box_tori .txt {
+  padding: 0 20px;
+}
+@media only screen and (max-width: 768px) {
+  .con_pri .box_pri .box_tori .txt {
+    padding: 0;
+  }
+}
+.con_pri .box_pri .box_num {
+  margin-top: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .con_pri .box_pri .box_num {
+    margin-top: 5%;
+  }
+}
+.con_pri .box_pri .box_num h4 {
+  font-weight: normal;
+  font-size: 113%;
+}
+.con_pri .box_pri .box_num .txt {
+  padding: 10px 0 0 20px;
+}
+@media only screen and (max-width: 768px) {
+  .con_pri .box_pri .box_num .txt {
+    padding: 3% 0 0 3%;
+  }
+}
+
+
+.box_check {
+  text-align: center;
+  margin: 1em auto;
+  
+}
+.box_check label {
+  display: inline-block;
+  margin: 20rem 0 10rem; 
+}
+.box_check label span {
+  margin-left: .3em;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 60rem auto 30rem;
+  cursor: pointer;
+  width: 60%;
+}
+
+.back_btn {
+    width: 200px;
+    /* margin: 50px auto; */
+    font-size: 18px;
+    height: 60px;
+    /* padding: 15px 60px; */
+    /* line-height: 60px; */
+    text-align: center;
+    background-color: gray;
+    color: white;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    text-decoration: none;
+        border: thick double #fff;
+
+}
+
+.back_btn:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+
+.btn2 {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 60rem auto 30rem;
+  cursor: pointer;
+  width: 60%;
+}
+
+.back_btn2 {
+    width: 200px;
+    /* margin: 50px auto; */
+    font-size: 18px;
+    height: 50px;
+    /* padding: 15px 60px; */
+    line-height: 50px;
+    text-align: center;
+    background-color: gray;
+    color: white;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    text-decoration: none;
+        border: thick double #fff;
+
+}
+
+.back_btn2:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+
+
+
+.btn label {
+    /* line-height: 50px; */
+    text-align: center;
+    background-color: #4FA49A;
+    color: white;
+    cursor: pointer;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    /* padding: 10px; */
+}
+
+.btn input {
+    width: 200px;
+    /* margin: 50px auto; */
+    font-size: 18px;
+    height: 60px;
+  display: inline-block;
+  background: #4FA49A;
+  padding: 10px;
+  color: #fff;
+  font: bold;
+  text-decoration: none;
+    border: thick double #fff;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    /* border: solid #fff; */
+
+  /* border: none; */
+
+}
+.btn input:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+
+.error {
+  font-size: 90%;
+  color: #BB1850;
+}
+
+
+
+.inquiry {
+    width: 100%;
+    margin: 0px;
+    padding: 10px 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 16rem;
+    line-height: 1.8;
+    background-color: #4FA49A;
+    text-align: center;
+    color: #fff
+    }
+
+
+@media only screen and (max-width: 600px) {
+
+    .box_con h1 {
+    font-size: 6vw;
+    margin-left: 3vw;
+  }
+
+  .btn {
+    flex-direction: column;
+    justify-content: center;
+    margin: 30rem auto 30rem;
+  }
+
+  .back_btn {
+  margin-bottom: 4vw;   
+  width: 80%;
+ }
+ 
+ .btn input {
+  width: 83%;
+ }
+}
+
+
