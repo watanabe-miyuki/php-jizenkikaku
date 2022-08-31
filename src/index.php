@@ -12,7 +12,7 @@ require('db_connect.php');
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    ハローワールド
+    ハローワールドだよ
 <script src="main.js"></script>
 </body>
 </html>
