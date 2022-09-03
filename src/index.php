@@ -1,3 +1,6 @@
+<?php
+require('db_connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <p>hello world</p>
+    ハローワールドだよ
+<script src="main.js"></script>
 </body>
 </html>
