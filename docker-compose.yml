@@ -33,7 +33,6 @@ services:
       - ./mysql/data:/var/lib/mysql
       - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
 
-
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     depends_on:
@@ -51,5 +50,5 @@ services:
   mailhog:
     image: mailhog/mailhog
     ports:
-      # - 1024:1025
-      - 8024:8025
+      - 102:1025
+      - 8025:8025
