@@ -1,5 +1,15 @@
 <?php
 require('db_connect.php');
+
+// ユーザー入力なし query
+$sql = 'select * from members where id = 4';//sql
+$stmt = $pdo->query($sql); //sql実行
+$result = $stmt->PDO::FETCH_ASSOC();
+echo '<pre>';
+var_dump($result);
+echo '</pre>';
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
