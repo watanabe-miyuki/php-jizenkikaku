@@ -15,7 +15,7 @@ $error = [];
 
 /* フォームの内容をチェック */
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-	$form['name'] = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+	$form['name'] = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
 	if ($form['name'] === '') {
 		$error['name'] = 'blank';
 	}
@@ -25,25 +25,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$error['email'] = 'blank';
 	} else {
 		$db = dbconnect();
-		$stmt = $db->prepare('select count(*) from members where email=?');
+		$stmt = $db->prepare('select count(*) from members where email=:email');
 		if (!$stmt) {
 			die($db->error);
 		}
-		$stmt->bind_param('s', $form['email']);
+		$stmt->bindValue('email', $form['email'], PDO::PARAM_STR);
 		$success = $stmt->execute();
 		if (!$success) {
 			die($db->error);
 		}
 
-		$stmt->bind_result($cnt);
-		$stmt->fetch();
+		$cnt = $stmt->fetch(PDO::FETCH_COLUMN);
+		// var_dump($cnt);
 
 		if ($cnt > 0) {
 			$error['email'] = 'duplicate';
 		}
 	}
 
-	$form['password'] = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+	$form['password'] = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
 	if ($form['password'] === '') {
 		$error['password'] = 'blank';
 	} else if (strlen($form['password']) < 4) {
@@ -72,6 +72,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		} else {
 			$_SESSION['form']['image'] = '';
 		}
+
+		// var_dump($_SESSION);
 
 		header('Location: check.php');
 		exit();

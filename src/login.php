@@ -7,7 +7,7 @@ $email = '';
 $password = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-  $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+  $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
   if ($email === '' || $password === '') {
     $error['login'] = 'blank';
   } else {
@@ -18,20 +18,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       die($db->error);
     }
 
-    $stmt->bind_param('s', $email);
+    $stmt->bindValue(1, $email);
     $success = $stmt->execute();
     if (!$success) {
       die($db->error);
     }
 
-    $stmt->bind_result($id, $name, $hash);
-    $stmt->fetch();
+    $result = $stmt->fetch();
 
-    if (password_verify($password, $hash)) {
+    if (password_verify($password, $result['password'])) {
       // ログイン成功
       session_regenerate_id();
-      $_SESSION['id'] = $id;
-      $_SESSION['name'] = $name;
+      $_SESSION['id'] = $result['id'];
+      $_SESSION['name'] = $result['name'];
       header('Location: index.php');
       exit();
     } else {

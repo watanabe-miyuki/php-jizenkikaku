@@ -16,7 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		die($db->error);
 	}
 	$password = password_hash($form['password'], PASSWORD_DEFAULT);
-	$stmt->bind_param('ssss', $form['name'], $form['email'], $password, $form['image']);
+	$stmt->bindValue(1, $form['name']);
+	$stmt->bindValue(2, $form['email']);
+	$stmt->bindValue(3, $password);
+	$stmt->bindValue(4, $form['image']);
 	$success = $stmt->execute();
 	if (!$success) {
 		die($db->error);

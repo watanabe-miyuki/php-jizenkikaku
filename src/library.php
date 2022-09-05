@@ -1,16 +1,25 @@
 <?php
-/* htmlspecialcharsを短くする */
-function h($value) {
-	return htmlspecialchars($value, ENT_QUOTES);
+function h($value)
+{
+    return htmlspecialchars((string)$value, ENT_QUOTES, "UTF-8");
 }
 
-/* DBへの接続 */
-function dbconnect() {
-    $db = new mysqli('localhost', 'root', 'root', 'min_bbs');
-    if (!$db) {
-		die($db->error);
-	}
+function dbconnect()
+{
+    $dsn = 'mysql:host=db;dbname=jizen;charset=utf8mb4;';
+    $user = 'posse_user';
+    $password = 'password';
 
-    return $db;
+    try {
+        $db = new PDO($dsn, $user, $password);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); //SQLインジェクション対策
+        return $db;
+    } catch (PDOException $e) {
+        echo '接続失敗: ' . $e->getMessage();
+        exit();
+    }
 }
+
 ?>

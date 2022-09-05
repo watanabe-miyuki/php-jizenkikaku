@@ -21,7 +21,8 @@ $stmt = $db->prepare('delete from posts where id=? and member_id=? limit 1');
 if (!$stmt) {
     die($db->error);
 }
-$stmt->bind_param('ii', $post_id, $id);
+$stmt->bindValue(1, $post_id, PDO::PARAM_INT);
+$stmt->bindValue(2, $id, PDO::PARAM_INT);
 $success = $stmt->execute();
 if (!$success) {
     die($db->error);
