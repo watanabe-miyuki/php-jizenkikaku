@@ -43,11 +43,8 @@ $db = dbconnect();
 				die($db->error);
 			}
 			$stmt->bindValue(1, $id, PDO::PARAM_INT);
-			$success = $stmt->execute();
-			if (!$success) {
-				die($db->error);
-			}
-			$result = $stmt->fetch();
+			$stmt->execute();
+			$result = $stmt->fetch(); // データがなければ $result = false が入る
 			if ($result) :
 			?>
 				<div class="msg">

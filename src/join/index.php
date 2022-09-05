@@ -30,10 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			die($db->error);
 		}
 		$stmt->bindValue('email', $form['email'], PDO::PARAM_STR);
-		$success = $stmt->execute();
-		if (!$success) {
-			die($db->error);
-		}
+		$stmt->execute();
 
 		$cnt = $stmt->fetch(PDO::FETCH_COLUMN);
 		// var_dump($cnt);

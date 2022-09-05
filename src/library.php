@@ -1,9 +1,12 @@
 <?php
+
+/* htmlspecialchars を短くする */
 function h($value)
 {
     return htmlspecialchars((string)$value, ENT_QUOTES, "UTF-8");
 }
 
+/* db接続 */
 function dbconnect()
 {
     $dsn = 'mysql:host=db;dbname=jizen;charset=utf8mb4;';

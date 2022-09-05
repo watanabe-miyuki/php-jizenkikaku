@@ -12,18 +12,12 @@ if (isset($_SESSION['form'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$db = dbconnect();
 	$stmt = $db->prepare('insert into members (name, email, password, picture) VALUES (?, ?, ?, ?)');
-	if (!$stmt) {
-		die($db->error);
-	}
 	$password = password_hash($form['password'], PASSWORD_DEFAULT);
 	$stmt->bindValue(1, $form['name']);
 	$stmt->bindValue(2, $form['email']);
 	$stmt->bindValue(3, $password);
 	$stmt->bindValue(4, $form['image']);
-	$success = $stmt->execute();
-	if (!$success) {
-		die($db->error);
-	}
+	$stmt->execute();
 
 	unset($_SESSION['form']);
 	header('Location: thanks.php');

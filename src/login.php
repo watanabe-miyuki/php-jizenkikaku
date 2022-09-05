@@ -14,19 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // ログインチェック
     $db = dbconnect();
     $stmt = $db->prepare('select id, name, password from members where email=? limit 1');
-    if (!$stmt) {
-      die($db->error);
-    }
-
     $stmt->bindValue(1, $email);
-    $success = $stmt->execute();
-    if (!$success) {
-      die($db->error);
-    }
-
+    $stmt->execute();
     $result = $stmt->fetch();
 
-    if (password_verify($password, $result['password'])) {
+    if (isset($result['password']) && password_verify($password, $result['password'])) {
       // ログイン成功
       session_regenerate_id();
       $_SESSION['id'] = $result['id'];
@@ -35,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       exit();
     } else {
       $error['login'] = 'failed';
+      // echo '失敗';
     }
   }
 }
